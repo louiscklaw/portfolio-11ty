@@ -405,25 +405,68 @@ pre[class*="language-"] {
           </a>
         </div>
         <div class="block grow lg:hidden"></div>
+
         <div class="flex flex-row items-center gap-2">
-          <div>
-            <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </div>
+          <div id="toggleTheme">
+  <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</div>
+
+<script>
+  let curr_theme = localStorage.getItem('curr_theme') || "light";
+
+  function changeThemeLight(){
+    console.log('changeThemeLight')
+    const html = document.querySelector("html");
+    html.dataset.theme = 'emerald';
+  }
+
+  function changeThemeDark(){
+    console.log('changeThemeDark')
+    const html = document.querySelector("html");
+    html.dataset.theme = 'dark';
+  }
+
+  function toggleTheme(){
+    if (curr_theme == 'light'){
+      curr_theme="dark"
+      changeThemeDark()
+    }else{
+      curr_theme="light"
+      changeThemeLight()
+    }
+    console.log('save toggle theme')
+    localStorage.setItem('curr_theme', curr_theme);
+
+  }
+
+  const button = document.querySelector("#toggleTheme");
+  button.addEventListener("click", toggleTheme);
+
+  
+  if (curr_theme == 'dark'){
+    changeThemeDark()
+  }else{
+    changeThemeLight()
+  }
+
+</script>
+
           <div class="border border-l-indigo-500 text-base h-[2rem]"></div>
           <div class="text-bases">
-            
-            <ul class="flex flex-row justify-center items-center gap-1">
-              <li>
-                <a href="/portfolio-11ty/en-US/" title="english" aria-label=":us:">
-                  <i class="fa-solid fa-language"></i>
-                  <span>US</span>
-                </a>
-              </li>
-            </ul>
-            
-          </div>
+  
+  <ul class="flex flex-row justify-center items-center gap-1">
+    <li>
+      <a href="/portfolio-11ty/en-US/" title="english" aria-label=":us:">
+        <i class="fa-solid fa-language"></i>
+        <span>US</span>
+      </a>
+    </li>
+  </ul>
+  
+</div>
+
         </div>
       </div>
     </div>
