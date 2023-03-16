@@ -58,10 +58,6 @@
     <lastmod>2023-03-16</lastmod>
   </url> 
   <url>
-    <loc>https://louiscklaw.github.io/portfolio-11ty/</loc>
-    <lastmod>2023-03-16</lastmod>
-  </url> 
-  <url>
     <loc>https://louiscklaw.github.io/portfolio-11ty/movies/mov1/</loc>
     <lastmod>2023-03-16</lastmod>
   </url> 
@@ -82,6 +78,10 @@
     <lastmod>2023-03-16</lastmod>
   </url> 
   <url>
+    <loc>https://louiscklaw.github.io/portfolio-11ty/tags/number-2/</loc>
+    <lastmod>2023-03-16</lastmod>
+  </url> 
+  <url>
     <loc>https://louiscklaw.github.io/portfolio-11ty/tags/another-tag/</loc>
     <lastmod>2023-03-16</lastmod>
   </url> 
@@ -91,10 +91,6 @@
   </url> 
   <url>
     <loc>https://louiscklaw.github.io/portfolio-11ty/tags/posts-with-two-tags/</loc>
-    <lastmod>2023-03-16</lastmod>
-  </url> 
-  <url>
-    <loc>https://louiscklaw.github.io/portfolio-11ty/tags/number-2/</loc>
     <lastmod>2023-03-16</lastmod>
   </url> 
   <url>
@@ -119,6 +115,10 @@
   </url> 
   <url>
     <loc>https://louiscklaw.github.io/portfolio-11ty/zh-HK/works/</loc>
+    <lastmod>2023-03-16</lastmod>
+  </url> 
+  <url>
+    <loc>https://louiscklaw.github.io/portfolio-11ty/</loc>
     <lastmod>2023-03-16</lastmod>
   </url>
 </urlset>
