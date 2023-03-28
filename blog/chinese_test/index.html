@@ -9,7 +9,30 @@
     <link rel="preconnect" href="https://example.com">
 
     <link rel="alternate" href="/portfolio-11ty/feed/feed.xml" type="application/atom+xml" title="louiscklaw">
-    <link rel="alternate" href="/portfolio-11ty/feed/feed.json" type="application/json" title="louiscklaw"> 
+    <link rel="alternate" href="/portfolio-11ty/feed/feed.json" type="application/json" title="louiscklaw">
+
+    
+
+<script src="https://browser.sentry-cdn.com/7.43.0/bundle.tracing.min.js" integrity="sha384-XrtsNPpOZ+ul39uZL5FBdv8ByR9EAoDxyx2pnT9+txkfvq1oqUSD6jWO+Qjj67LD" crossorigin="anonymous"></script>
+
+<script>
+  Sentry.init({
+    dsn: "https://87f86bb1f70549aca9a36d7f63965ff7@o1234273.ingest.sentry.io/4504852838875136",
+    integrations: [new Sentry.BrowserTracing()],
+
+
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+  });
+
+  myUndefinedFunction();
+
+</script>
+
+
+    
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -21,8 +44,10 @@
   }
 </style>
 
+
     <style>
-      /* Only include the syntax highlighter CSS on blog posts */ /**
+      /* Only include the syntax highlighter CSS on blog posts */
+  /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
  * @author ocodia
@@ -145,7 +170,8 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
- /*
+
+  /*
  * New diff- syntax
  */
 
@@ -190,59 +216,35 @@ pre[class*='language-diff-'] {
   text-decoration: none; /* override del, ins, mark defaults */
   color: inherit; /* override del, ins, mark defaults */
 }
- .youtube {
+
+  .youtube {
   width: calc(100vw - 2rem);
   min-height: calc((100vw - 2rem) / 16 * 9);
 }
-@media screen and (min-width: 640px) {
-  .youtube .youtube {
-    background-color: tomato;
-  }
-}
 @media screen and (min-width: 768px) {
   .youtube {
-    background-color: pink;
     width: 33vw;
     min-height: 18.5625vw;
   }
 }
-@media screen and (min-width: 1024px) {
-  .youtube {
-    background-color: cyan;
-  }
-}
 
 /*# sourceMappingURL=youtube.css.map */
-ol li {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-left: 1rem;
-  list-style-type: disc;
-  margin-bottom: 1rem;
-}
-ol li ol {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-ol li ol li {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-left: 1rem;
-  list-style-type: disc;
-  margin-bottom: 0.5rem;
-}
-
-/*# sourceMappingURL=toc.css.map */
 :lang(zh) p {
   letter-spacing: 0.2em;
 }
 :lang(zh) h1 {
   letter-spacing: 0.1em;
 }
+:lang(zh) a button {
+  letter-spacing: 0.2em;
+}
 
 /*# sourceMappingURL=chinese_spacing.css.map */
 * {
-    box-sizing: border-box; padding: 0; margin: 0; }
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -252,9 +254,53 @@ ol li ol li {
   white-space: nowrap;
   width: 1px;
 }
- 
+
+      
 
 /*# sourceMappingURL=custom.css.map */
+
+      .tag-card {
+  background-color: rgba(44, 62, 80, 0.1);
+}
+
+[data-theme=dracula] .tag-card {
+  border: solid 1px rgba(236, 240, 241, 0.2);
+  background-color: rgb(44, 62, 80);
+}
+
+/*# sourceMappingURL=cust_theme.css.map */
+
+      .nav-buttons {
+  background-color: rgb(236, 240, 241);
+}
+
+[data-theme=dracula] .nav-buttons {
+  background-color: rgba(236, 240, 241, 0.1);
+}
+[data-theme=dracula] .nav-buttons .nav-button-text {
+  color: rgb(236, 240, 241);
+}
+[data-theme=dracula] .nav-buttons .nav-button-icon {
+  color: rgb(236, 240, 241);
+}
+
+/*# sourceMappingURL=bottom_nav.css.map */
+
+      
+
+/*# sourceMappingURL=helloworld.css.map */
+
+      .palette {
+  color: hsla(var(--bc)/var(--tw-text-opacity, 1));
+  background-color: hsla(var(--b1)/var(--tw-bg-opacity, 1));
+}
+
+[data-theme=dracula] .palette {
+  color: hsla(var(--bc)/var(--tw-text-opacity, 1));
+  background-color: hsla(var(--b1)/var(--tw-bg-opacity, 1));
+}
+
+/*# sourceMappingURL=palette.css.map */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -392,15 +438,20 @@ pre[class*="language-"] {
 
   </head>
 
-  <body>
+  <body class="antialiased">
+    <div class="palette" style="width:0px;height:0px;"></div>
+
     <div class="p-4 flex flex-col" style="min-height: calc(100vh - 60px)">
       <div class="grow">
-        <header class="w-full lg:w-8/12 m-auto flex-none">
+        <header class="
+  w-full lg:w-9/12
+  m-auto
+  flex-none
+  ">
   <div class="flex flex-row flex-wrap content-center">
     <div class="basis-full lg:basis-1/2">
-
       <div class="
-        mx-4
+        mx-4 lg:mx-0
         flex flex-row items-center gap-7
         ">
 
@@ -451,7 +502,7 @@ pre[class*="language-"] {
   function changeThemeDark(){
     console.log('changeThemeDark')
     const html = document.querySelector("html");
-    html.dataset.theme = 'dark';
+    html.dataset.theme = 'dracula';
 
     document.querySelector('#theme-sun-icon').style.display="block"
     document.querySelector('#theme-moon-icon').style.display="none"
@@ -482,8 +533,11 @@ pre[class*="language-"] {
 
 </script>
 
-          <div class="border border-l-indigo-500 text-base h-[2rem]"></div>
-          <div class="text-bases">
+          <div class="hidden text-bases">
+  <div class="border border-l-indigo-500 text-base h-[2rem]"></div>
+</div>
+
+<div class="hidden text-bases">
   
   <ul class="flex flex-row justify-center items-center gap-1">
     <li>
@@ -504,7 +558,8 @@ pre[class*="language-"] {
 
     <div class="basis-full lg:basis-1/2 items-center flex flex-row justify-start lg:justify-end">
       <nav class="w-full lg:w-fit">
-  <h2 class="visually-hidden">Top navigation menu</h2>
+  <h2 class="visually-hidden" style="display: none">Top navigation menu</h2>
+
   <ul class="
     w-full
     flex flex-row flex-wrap
@@ -514,13 +569,33 @@ pre[class*="language-"] {
     ">
 
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/en-US/works/">Works</a>
+      <a href="/portfolio-11ty/en-US/works/">
+        Works
+      </a>
     </li>
+
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/search/">Search</a>
+      <a href="/portfolio-11ty/en-US/blog/">
+        Blog
+      </a>
     </li>
+
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/tags/">Tags</a>
+      <a href="/portfolio-11ty/en-US/search/">
+        Search
+      </a>
+    </li>
+
+    <li class="text-base font-bold">
+      <a href="/portfolio-11ty/en-US/tags/">
+        Tags
+      </a>
+    </li>
+
+    <li class="text-base font-bold">
+      <a href="//share.louislabs.com/upload">
+        Upload
+      </a>
     </li>
 
     
@@ -535,12 +610,12 @@ pre[class*="language-"] {
     <h2 class="visually-hidden">Top level navigation menu</h2>
     <ul class="nav">
         <li class="nav-item">
-          <a href="/portfolio-11ty/en-US/works/">
+          <a href="/portfolio-11ty/en-US/blog/">
             Work
           </a>
         </li>
         <li class="nav-item">
-          <a href="/portfolio-11ty/works/">
+          <a href="/portfolio-11ty/en-US/works/">
             Work
           </a>
         </li>
@@ -566,22 +641,49 @@ pre[class*="language-"] {
 </header>
 
 
-        <main id="skip" class="mt-8 lg:mt-20"> 
+        <main id="skip" class="mt-8 lg:mt-20">
+          
 
-<div class="flex flex-col lg:w-6/12 lg:m-auto pt-0 lg:pt-8" style="min-height: calc(100vh - 60px - 100px - 100px)">
+<div class="
+  flex flex-col
+  w-full lg:w-9/12 lg:m-auto
+  pt-0 lg:pt-8" style="min-height: calc(100vh - 60px - 100px - 100px)">
+
   <article class="grow">
-     
+    <div class="
+      flex flex-col lg:flex-row
+      ">
 
+      
+        <div class="
+            w-8/12 lg:max-w-screen-md
+            m-auto
+            prose max-w-none
+            prose-code:bg-slate-200
+            prose-code:rounded
+            prose-h3:font-bold
+            prose-h3:leading-none
+            prose-img:my-0
+            prose-img:rounded
+            prose-li:pl-0
+            prose-p:before:content-['']
+            prose-a:no-underline
+            prose-a:hover:underline
+            break-all
+            ">
+          <div class="pt-4">
+            <h1 class="m-0 text-2xl lg:text-4xl"> 我在淘寶買了BambuLabX1-CarbonCombo </h1>
 
-    <div class="m-auto prose max-w-none prose-code:bg-slate-200 prose-code:rounded prose-h3:font-bold prose-h3:leading-none prose-img:my-0 prose-img:rounded prose-li:pl-0 prose-p:before:content-[''] prose-a:no-underline prose-a:hover:underline">
-      <div class="pt-4"> <h1 class="m-0 text-2xl lg:text-4xl"> 我在淘寶買了BambuLabX1-CarbonCombo </h1>
- </div>
-      <div class="pt-4"> <div class="text-sm flex flex-wrap gap-1 mt-2">
+          </div>
+          <div class="pt-4">
+            <div class="text-sm flex flex-wrap gap-1 mt-2">
   <ul class="m-0 list-inside list-none flex flex-wrap not-prose pl-0 gap-1">
     <li>
-      <time datetime="2023-01-23"> 23 January 2023 </time>
+      <time datetime="2023-01-23">
+        23 January 2023
+      </time>
     </li>
-    <li> · 3 min </li>
+    <li> · 1 min </li>
     <li> · Louis </li>
   </ul>
   <div>|</div>
@@ -595,13 +697,29 @@ pre[class*="language-"] {
       <i class="text-xs fa-solid fa-link"></i>
     </a>
   </div>
+
+  <div>|</div>
+
+  <div>
+    <ul class="m-0 list-inside list-none flex flex-wrap not-prose pl-0 gap-1">
+        <li>
+          <a href="/portfolio-11ty/tags/blog/" class="badge flex flex-row gap-1 items-center font-bold">
+            <i class="fa-solid fa-hashtag"></i>blog
+          </a>
+        </li>
+    </ul>
+    
+  </div>
 </div>
- </div>
 
-      <div class="pt-12 lg:pt-12 prose-ul:pl-4">
-         
+          </div>
 
-        <div lang="zh"> <h1 id="" tabindex="-1">这是中文文本。 <a class="header-anchor" href="#">#</a></h1>
+          <div class="pt-12 lg:pt-12 prose-ul:pl-4">
+            
+              
+
+              <div lang="zh">
+                <h1 id="" tabindex="-1">这是中文文本。 <a class="header-anchor" href="#">#</a></h1>
 <p>待進變果沒致友環健問水法代人苦天。
 業立臺四即文善公作有往，等怕準命小電個。
 査今聞光洋後化外財強主職。</p>
@@ -627,40 +745,54 @@ encounter consequences that are extremely painful. Nor again is there</p>
 📴🐾🎵📧🌃🎃🔲🕃 📒👌🌞👉 💐📐🏄🎺🔺🌙🌱 🎯🌈🐾📇🔻 💯🌄🕧🎅🔡🐖 📲📫👹
 📳🐫👷. 🔛🌟📨📢👮 🍘👭👿🏫🔤🐥🔐 🌖💤🔱🍬🌞🌽 🔪👶🔸🕝🌚💰 💔🎓🐡
 📤🏮👀🍮 💃👪👦🌀🌶📈 🍵📊💓🐧🎢👃 🍕🌛🔎🔋🎣🍃 🎡👩📔🍈💭 🎣👅🔽📟📑💋</p>
- </div>
-        
-      </div>
+
+              </div>
+            
+          </div>
+        </div>
+      
     </div>
   </article>
 
+  <div class="my-8"></div>
+
   
-<div class="p-4 lg:px-8 mt-2 rounded-xl bg-slate-100 prose prose-p:mb-0 prose-h2:mb-2 max-w-none">
-  <ul class="not-prose pl-0 list-none list-outside flex gap-4 lg:gap-8 justify-between">
-    <li class="list-outside">
-      <a href="/portfolio-11ty/blog/fourthpost/" class="font-bold">
-        <div class="text-slate-500 flex gap-2 items-center justify-start">
-          <i class="fa-solid fa-angles-left fa-xs"></i>
-          <span class="text-sm uppercase">Previous</span>
-        </div>
-        <div class="pt-2 lg:pt-4">This is my fourth post.</div>
-      </a>
-    </li>
-    
-    <li class="list-outside flex end">
-      <a href="/portfolio-11ty/blog/installation/" class="font-bold">
-        <div class="text-slate-500 flex gap-2 items-center justify-end">
-          <span class="text-sm uppercase">Next</span>
-          <i class="fa-solid fa-angles-right fa-xs"></i>
-        </div>
-        <div class="pt-2 lg:pt-4">Installation | Update</div>
-      </a>
-    </li>
-    
-  </ul>
+    <div class="
+      nav-buttons
+      p-4 lg:px-8 mt-2
+      rounded-xl
+      prose prose-p:mb-0 prose-h2:mb-2 max-w-none
+      ">
+      <ul class="not-prose pl-0 list-none list-outside flex gap-4 lg:gap-8 justify-between">
+        <li class="list-outside">
+          <a href="/portfolio-11ty/blog/fourthpost/" class="font-bold">
+            <div class="text-slate-500 flex gap-2 items-center justify-start">
+              <i class="nav-button-icon fa-solid fa-angles-left fa-xs"></i>
+              <span class="nav-button-text text-sm uppercase">Previous</span>
+            </div>
+            <div class="nav-text-title pt-2 lg:pt-4">This is my fourth post.</div>
+          </a>
+        </li>
+        
+          <li class="list-outside flex end">
+            <a href="/portfolio-11ty/blog/installation/" class="font-bold">
+              <div class="text-slate-500 flex gap-2 items-center justify-end">
+                <span class="nav-button-text text-sm uppercase">Next</span>
+                <i class="nav-button-icon fa-solid fa-angles-right fa-xs"></i>
+              </div>
+              <div class="nav-text-title pt-2 lg:pt-4">Installation | Update</div>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="my-8"></div>
 </div>
 
-</div>
- </main>
+        </main>
+
       </div>
 
       <footer>
@@ -677,9 +809,16 @@ encounter consequences that are extremely painful. Nor again is there</p>
         <div class="underline">2023 louis portfolio</div>
       </a>
 
-      <a href="//github.com/adityatelange/hugo-PaperMod" target="_blank">
-        building on top of Hugo papermod
-      </a>
+      <div>
+        building on top of <a href="//github.com/adityatelange/hugo-PaperMod" target="_blank">
+          Hugo papermod
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/louiscklaw/portfolio-11ty">
+          <i class="fa-brands fa-github"></i><span class="pl-1">source</span>
+        </a>
+      </div>
     </div>
   </div>
 </footer>

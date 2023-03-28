@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html lang="" dir="" data-theme="emerald">
+<html lang="zh-HK" dir="ltr" data-theme="emerald">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>louiscklaw</title>
+    <title>Tagged “another tag”</title>
     <meta name="description" content="Hello, I am louis law and this is my portfolio">
 
     <link rel="preconnect" href="https://example.com">
 
     <link rel="alternate" href="/portfolio-11ty/feed/feed.xml" type="application/atom+xml" title="louiscklaw">
-    <link rel="alternate" href="/portfolio-11ty/feed/feed.json" type="application/json" title="louiscklaw"> 
+    <link rel="alternate" href="/portfolio-11ty/feed/feed.json" type="application/json" title="louiscklaw">
+
+    
+
+<script src="https://browser.sentry-cdn.com/7.43.0/bundle.tracing.min.js" integrity="sha384-XrtsNPpOZ+ul39uZL5FBdv8ByR9EAoDxyx2pnT9+txkfvq1oqUSD6jWO+Qjj67LD" crossorigin="anonymous"></script>
+
+<script>
+  Sentry.init({
+    dsn: "https://87f86bb1f70549aca9a36d7f63965ff7@o1234273.ingest.sentry.io/4504852838875136",
+    integrations: [new Sentry.BrowserTracing()],
+
+
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+  });
+
+  myUndefinedFunction();
+
+</script>
+
+
+    
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -21,9 +44,24 @@
   }
 </style>
 
+
     <style>
-      * {
-    box-sizing: border-box; padding: 0; margin: 0; }
+      :lang(zh) p {
+  letter-spacing: 0.2em;
+}
+:lang(zh) h1 {
+  letter-spacing: 0.1em;
+}
+:lang(zh) a button {
+  letter-spacing: 0.2em;
+}
+
+/*# sourceMappingURL=chinese_spacing.css.map */
+* {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -33,9 +71,53 @@
   white-space: nowrap;
   width: 1px;
 }
- 
+
+      
 
 /*# sourceMappingURL=custom.css.map */
+
+      .tag-card {
+  background-color: rgba(44, 62, 80, 0.1);
+}
+
+[data-theme=dracula] .tag-card {
+  border: solid 1px rgba(236, 240, 241, 0.2);
+  background-color: rgb(44, 62, 80);
+}
+
+/*# sourceMappingURL=cust_theme.css.map */
+
+      .nav-buttons {
+  background-color: rgb(236, 240, 241);
+}
+
+[data-theme=dracula] .nav-buttons {
+  background-color: rgba(236, 240, 241, 0.1);
+}
+[data-theme=dracula] .nav-buttons .nav-button-text {
+  color: rgb(236, 240, 241);
+}
+[data-theme=dracula] .nav-buttons .nav-button-icon {
+  color: rgb(236, 240, 241);
+}
+
+/*# sourceMappingURL=bottom_nav.css.map */
+
+      
+
+/*# sourceMappingURL=helloworld.css.map */
+
+      .palette {
+  color: hsla(var(--bc)/var(--tw-text-opacity, 1));
+  background-color: hsla(var(--b1)/var(--tw-bg-opacity, 1));
+}
+
+[data-theme=dracula] .palette {
+  color: hsla(var(--bc)/var(--tw-text-opacity, 1));
+  background-color: hsla(var(--b1)/var(--tw-bg-opacity, 1));
+}
+
+/*# sourceMappingURL=palette.css.map */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -173,15 +255,20 @@ pre[class*="language-"] {
 
   </head>
 
-  <body>
+  <body class="antialiased">
+    <div class="palette" style="width:0px;height:0px;"></div>
+
     <div class="p-4 flex flex-col" style="min-height: calc(100vh - 60px)">
       <div class="grow">
-        <header class="w-full lg:w-8/12 m-auto flex-none">
+        <header class="
+  w-full lg:w-9/12
+  m-auto
+  flex-none
+  ">
   <div class="flex flex-row flex-wrap content-center">
     <div class="basis-full lg:basis-1/2">
-
       <div class="
-        mx-4
+        mx-4 lg:mx-0
         flex flex-row items-center gap-7
         ">
 
@@ -232,7 +319,7 @@ pre[class*="language-"] {
   function changeThemeDark(){
     console.log('changeThemeDark')
     const html = document.querySelector("html");
-    html.dataset.theme = 'dark';
+    html.dataset.theme = 'dracula';
 
     document.querySelector('#theme-sun-icon').style.display="block"
     document.querySelector('#theme-moon-icon').style.display="none"
@@ -263,8 +350,11 @@ pre[class*="language-"] {
 
 </script>
 
-          <div class="border border-l-indigo-500 text-base h-[2rem]"></div>
-          <div class="text-bases">
+          <div class="hidden text-bases">
+  <div class="border border-l-indigo-500 text-base h-[2rem]"></div>
+</div>
+
+<div class="hidden text-bases">
   
   <ul class="flex flex-row justify-center items-center gap-1">
     <li>
@@ -285,7 +375,8 @@ pre[class*="language-"] {
 
     <div class="basis-full lg:basis-1/2 items-center flex flex-row justify-start lg:justify-end">
       <nav class="w-full lg:w-fit">
-  <h2 class="visually-hidden">Top navigation menu</h2>
+  <h2 class="visually-hidden" style="display: none">Top navigation menu</h2>
+
   <ul class="
     w-full
     flex flex-row flex-wrap
@@ -295,13 +386,33 @@ pre[class*="language-"] {
     ">
 
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/en-US/works/">Works</a>
+      <a href="/portfolio-11ty/zh-HK/works/">
+        手作仔
+      </a>
     </li>
+
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/search/">Search</a>
+      <a href="/portfolio-11ty/en-US/blog/">
+        Blog
+      </a>
     </li>
+
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/tags/">Tags</a>
+      <a href="/portfolio-11ty/zh-HK/search/">
+        搵嘢
+      </a>
+    </li>
+
+    <li class="text-base font-bold">
+      <a href="/portfolio-11ty/zh-HK/tags/">
+        標纖
+      </a>
+    </li>
+
+    <li class="text-base font-bold">
+      <a href="//share.louislabs.com/upload">
+        Upload
+      </a>
     </li>
 
     
@@ -316,12 +427,12 @@ pre[class*="language-"] {
     <h2 class="visually-hidden">Top level navigation menu</h2>
     <ul class="nav">
         <li class="nav-item">
-          <a href="/portfolio-11ty/en-US/works/">
+          <a href="/portfolio-11ty/en-US/blog/">
             Work
           </a>
         </li>
         <li class="nav-item">
-          <a href="/portfolio-11ty/works/" aria-current="page">
+          <a href="/portfolio-11ty/en-US/works/">
             Work
           </a>
         </li>
@@ -347,143 +458,35 @@ pre[class*="language-"] {
 </header>
 
 
-        <main id="skip" class="mt-8 lg:mt-20"> 
-<div>
-  <div class="prose max-w-none prose-h1:text-3xl prose-h1:font-bold prose-h1:no-underline prose-a:no-underline prose-h1:my-4 prose-img:rounded-xl prose-headings:underline">
-    
- 
+        <main id="skip" class="mt-8 lg:mt-20">
+          
 
-<div class="mx-auto w-full lg:w-10/12 flex flex-col lg:flex-row gap-0 lg:gap-4">
-  <div class="w-full lg:w-4/12">
-    <h1>Hi, this is louis</h1>
-    <p>
-      Welcome to demo of hugo’s theme PaperMod.<br>
-      PaperMod is a simple but fast and responsive theme with useful feature-set that enhances UX.<br>
-      Do give a 🌟 on Github !<br>
-      PaperMod is based on theme Paper.<br>
-    </p>
 
-    <p class="hidden lg:block">
-      阪ハウワ応92勤常勉旋72依過らつ。門むば隊就メツヘ突長山テ碁人ゆッ
-      歳両ら止都トカハキ締素ぎぜつ索能経初臣こ党求ぼ担効カタハネ文会ヲツレ端作67神フ測相りち挑坂ぶ。
-      応ハシカ向2捜せぽけリ覧郷ユヤワサ準助7子群メソマ直林無ノヱク総九るね法
-      右み料生レソヱ犯2属スタリチ海新志合のみル。落国がどゅト備初
-    </p>
 
-    <div class="text-3xl flex flex-row flex-wrap gap-4">
-      <a href="//github.com/louiscklaw" target="_blank">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="//www.linkedin.com/in/louiscklaw" target="_blank">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
-      <a href="//t.me/louislabs" target="_blank">
-        <i class="fa-brands fa-telegram"></i>
-      </a>
-      <a href="//louislabs.slack.com/" target="_blank">
-        <i class="fa-brands fa-slack"></i>
-      </a>
-    </div>
+<div class="
+    prose
+    max-w-none
+    flex flex-col m-auto
+    w-full lg:w-6/12
+    pt-0 lg:pt-8
+    " style="min-height: calc(100vh - 60px - 100px - 100px)">
+
+
+  <div class="">
+    <h1 lang="zh">標纖咗 "another tag"</h1>
   </div>
 
-  <div class="w-full">
+  
+
+  <div class="my-8">
+    <div>
       <div class="w-full flex flex-row flex-wrap list-none">
-  
-  <li class="basis-full lg:basis-1/3 px-0 lg:px-2">
-    <a href="/portfolio-11ty/blog/installation/">
-      <div class="p-2 lg:p-4 rounded-xl bg-slate-50 border border-slate-150 prose prose-p:mb-0 prose-h2:text-base">
-        
-        <h2>Installation | Update</h2>
-        
-        <p class="mt-4">Read Install and Update instructions here</p>
-        <div>
-          <time datetime="2023-01-23"> January 2023 </time>
-          · 3 min · Aditya Telange
-        </div>
-      </div>
-    </a>
-  </li>
-  
-  <li class="basis-full lg:basis-1/3 px-0 lg:px-2">
-    <a href="/portfolio-11ty/blog/chinese_test/">
-      <div class="p-2 lg:p-4 rounded-xl bg-slate-50 border border-slate-150 prose prose-p:mb-0 prose-h2:text-base">
-        
-        <h2>我在淘寶買了BambuLabX1-CarbonCombo</h2>
-        
-        <p class="mt-4">Read Install and Update instructions here</p>
-        <div>
-          <time datetime="2023-01-23"> January 2023 </time>
-          · 3 min · Aditya Telange
-        </div>
-      </div>
-    </a>
-  </li>
-  
-  <li class="basis-full lg:basis-1/3 px-0 lg:px-2">
-    <a href="/portfolio-11ty/blog/fourthpost/">
-      <div class="p-2 lg:p-4 rounded-xl bg-slate-50 border border-slate-150 prose prose-p:mb-0 prose-h2:text-base">
-        
-        <h2>This is my fourth post.</h2>
-        
-        <p class="mt-4">Read Install and Update instructions here</p>
-        <div>
-          <time datetime="2018-09-30"> September 2018 </time>
-          · 3 min · Aditya Telange
-        </div>
-      </div>
-    </a>
-  </li>
-  
-  <li class="basis-full lg:basis-1/3 px-0 lg:px-2">
-    <a href="/portfolio-11ty/blog/CJKTest/">
-      <div class="p-2 lg:p-4 rounded-xl bg-slate-50 border border-slate-150 prose prose-p:mb-0 prose-h2:text-base">
-        
-        <h2>待進變果沒致友環健問水法代人苦天。</h2>
-        
-        <p class="mt-4">Read Install and Update instructions here</p>
-        <div>
-          <time datetime="2018-09-30"> September 2018 </time>
-          · 3 min · Aditya Telange
-        </div>
-      </div>
-    </a>
-  </li>
-  
-  <li class="basis-full lg:basis-1/3 px-0 lg:px-2">
-    <a href="/portfolio-11ty/blog/thirdpost/">
-      <div class="p-2 lg:p-4 rounded-xl bg-slate-50 border border-slate-150 prose prose-p:mb-0 prose-h2:text-base">
-        
-        <h2>This is my third post.</h2>
-        
-        <p class="mt-4">Read Install and Update instructions here</p>
-        <div>
-          <time datetime="2018-08-24"> August 2018 </time>
-          · 3 min · Aditya Telange
-        </div>
-      </div>
-    </a>
-  </li>
-  
-  <li class="basis-full lg:basis-1/3 px-0 lg:px-2">
-    <a href="/portfolio-11ty/blog/secondpost/">
-      <div class="p-2 lg:p-4 rounded-xl bg-slate-50 border border-slate-150 prose prose-p:mb-0 prose-h2:text-base">
-        
-        <h2>This is my second post with a much longer title.</h2>
-        
-        <p class="mt-4">Read Install and Update instructions here</p>
-        <div>
-          <time datetime="2018-07-04"> July 2018 </time>
-          · 3 min · Aditya Telange
-        </div>
-      </div>
-    </a>
-  </li>
   
   <li class="basis-full lg:basis-1/3 px-0 lg:px-2">
     <a href="/portfolio-11ty/blog/firstpost/">
       <div class="p-2 lg:p-4 rounded-xl bg-slate-50 border border-slate-150 prose prose-p:mb-0 prose-h2:text-base">
         
-        <h2>This is my first post.</h2>
+          <h2>This is my first post.</h2>
         
         <p class="mt-4">Read Install and Update instructions here</p>
         <div>
@@ -496,14 +499,24 @@ pre[class*="language-"] {
   
 </div>
 
+    </div>
   </div>
+
+  <div class="w-full flex justify-center" lang="zh">
+    <a href="/portfolio-11ty/zh-HK/tags/" class="no-underline">
+      <button class="
+        btn btn-active btn-ghost
+        w-fit m-auto my-8
+      ">
+        <span><i class="fa-solid fa-hashtag"></i> 全部標纖</span>
+      </button>
+      </a>
+  </div>
+
 </div>
 
- 
+        </main>
 
-  </div>
-</div>
- </main>
       </div>
 
       <footer>
@@ -520,9 +533,16 @@ pre[class*="language-"] {
         <div class="underline">2023 louis portfolio</div>
       </a>
 
-      <a href="//github.com/adityatelange/hugo-PaperMod" target="_blank">
-        building on top of Hugo papermod
-      </a>
+      <div>
+        building on top of <a href="//github.com/adityatelange/hugo-PaperMod" target="_blank">
+          Hugo papermod
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/louiscklaw/portfolio-11ty">
+          <i class="fa-brands fa-github"></i><span class="pl-1">source</span>
+        </a>
+      </div>
     </div>
   </div>
 </footer>

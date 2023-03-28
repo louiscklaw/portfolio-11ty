@@ -9,7 +9,30 @@
     <link rel="preconnect" href="https://example.com">
 
     <link rel="alternate" href="/portfolio-11ty/feed/feed.xml" type="application/atom+xml" title="louiscklaw">
-    <link rel="alternate" href="/portfolio-11ty/feed/feed.json" type="application/json" title="louiscklaw"> 
+    <link rel="alternate" href="/portfolio-11ty/feed/feed.json" type="application/json" title="louiscklaw">
+
+    
+
+<script src="https://browser.sentry-cdn.com/7.43.0/bundle.tracing.min.js" integrity="sha384-XrtsNPpOZ+ul39uZL5FBdv8ByR9EAoDxyx2pnT9+txkfvq1oqUSD6jWO+Qjj67LD" crossorigin="anonymous"></script>
+
+<script>
+  Sentry.init({
+    dsn: "https://87f86bb1f70549aca9a36d7f63965ff7@o1234273.ingest.sentry.io/4504852838875136",
+    integrations: [new Sentry.BrowserTracing()],
+
+
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+  });
+
+  myUndefinedFunction();
+
+</script>
+
+
+    
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -21,8 +44,10 @@
   }
 </style>
 
+
     <style>
-      /* Only include the syntax highlighter CSS on blog posts */ /**
+      /* Only include the syntax highlighter CSS on blog posts */
+  /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
  * @author ocodia
@@ -145,7 +170,8 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
- /*
+
+  /*
  * New diff- syntax
  */
 
@@ -190,25 +216,15 @@ pre[class*='language-diff-'] {
   text-decoration: none; /* override del, ins, mark defaults */
   color: inherit; /* override del, ins, mark defaults */
 }
- .youtube {
+
+  .youtube {
   width: calc(100vw - 2rem);
   min-height: calc((100vw - 2rem) / 16 * 9);
 }
-@media screen and (min-width: 640px) {
-  .youtube .youtube {
-    background-color: tomato;
-  }
-}
 @media screen and (min-width: 768px) {
   .youtube {
-    background-color: pink;
     width: 33vw;
     min-height: 18.5625vw;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .youtube {
-    background-color: cyan;
   }
 }
 
@@ -232,9 +248,35 @@ ol li ol li {
   margin-bottom: 0.5rem;
 }
 
+.toc ol li {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  list-style-type: disc;
+  margin-bottom: 1rem;
+}
+.toc ol li ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.toc ol li ol li {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme=dracula] .toc {
+  background-color: rgb(127, 140, 141);
+}
+
 /*# sourceMappingURL=toc.css.map */
 * {
-    box-sizing: border-box; padding: 0; margin: 0; }
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -244,9 +286,53 @@ ol li ol li {
   white-space: nowrap;
   width: 1px;
 }
- 
+
+      
 
 /*# sourceMappingURL=custom.css.map */
+
+      .tag-card {
+  background-color: rgba(44, 62, 80, 0.1);
+}
+
+[data-theme=dracula] .tag-card {
+  border: solid 1px rgba(236, 240, 241, 0.2);
+  background-color: rgb(44, 62, 80);
+}
+
+/*# sourceMappingURL=cust_theme.css.map */
+
+      .nav-buttons {
+  background-color: rgb(236, 240, 241);
+}
+
+[data-theme=dracula] .nav-buttons {
+  background-color: rgba(236, 240, 241, 0.1);
+}
+[data-theme=dracula] .nav-buttons .nav-button-text {
+  color: rgb(236, 240, 241);
+}
+[data-theme=dracula] .nav-buttons .nav-button-icon {
+  color: rgb(236, 240, 241);
+}
+
+/*# sourceMappingURL=bottom_nav.css.map */
+
+      
+
+/*# sourceMappingURL=helloworld.css.map */
+
+      .palette {
+  color: hsla(var(--bc)/var(--tw-text-opacity, 1));
+  background-color: hsla(var(--b1)/var(--tw-bg-opacity, 1));
+}
+
+[data-theme=dracula] .palette {
+  color: hsla(var(--bc)/var(--tw-text-opacity, 1));
+  background-color: hsla(var(--b1)/var(--tw-bg-opacity, 1));
+}
+
+/*# sourceMappingURL=palette.css.map */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -384,15 +470,20 @@ pre[class*="language-"] {
 
   </head>
 
-  <body>
+  <body class="antialiased">
+    <div class="palette" style="width:0px;height:0px;"></div>
+
     <div class="p-4 flex flex-col" style="min-height: calc(100vh - 60px)">
       <div class="grow">
-        <header class="w-full lg:w-8/12 m-auto flex-none">
+        <header class="
+  w-full lg:w-9/12
+  m-auto
+  flex-none
+  ">
   <div class="flex flex-row flex-wrap content-center">
     <div class="basis-full lg:basis-1/2">
-
       <div class="
-        mx-4
+        mx-4 lg:mx-0
         flex flex-row items-center gap-7
         ">
 
@@ -443,7 +534,7 @@ pre[class*="language-"] {
   function changeThemeDark(){
     console.log('changeThemeDark')
     const html = document.querySelector("html");
-    html.dataset.theme = 'dark';
+    html.dataset.theme = 'dracula';
 
     document.querySelector('#theme-sun-icon').style.display="block"
     document.querySelector('#theme-moon-icon').style.display="none"
@@ -474,8 +565,11 @@ pre[class*="language-"] {
 
 </script>
 
-          <div class="border border-l-indigo-500 text-base h-[2rem]"></div>
-          <div class="text-bases">
+          <div class="hidden text-bases">
+  <div class="border border-l-indigo-500 text-base h-[2rem]"></div>
+</div>
+
+<div class="hidden text-bases">
   
   <ul class="flex flex-row justify-center items-center gap-1">
     <li>
@@ -496,7 +590,8 @@ pre[class*="language-"] {
 
     <div class="basis-full lg:basis-1/2 items-center flex flex-row justify-start lg:justify-end">
       <nav class="w-full lg:w-fit">
-  <h2 class="visually-hidden">Top navigation menu</h2>
+  <h2 class="visually-hidden" style="display: none">Top navigation menu</h2>
+
   <ul class="
     w-full
     flex flex-row flex-wrap
@@ -506,13 +601,33 @@ pre[class*="language-"] {
     ">
 
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/en-US/works/">Works</a>
+      <a href="/portfolio-11ty/en-US/works/">
+        Works
+      </a>
     </li>
+
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/search/">Search</a>
+      <a href="/portfolio-11ty/en-US/blog/">
+        Blog
+      </a>
     </li>
+
     <li class="text-base font-bold">
-      <a href="/portfolio-11ty/tags/">Tags</a>
+      <a href="/portfolio-11ty/en-US/search/">
+        Search
+      </a>
+    </li>
+
+    <li class="text-base font-bold">
+      <a href="/portfolio-11ty/en-US/tags/">
+        Tags
+      </a>
+    </li>
+
+    <li class="text-base font-bold">
+      <a href="//share.louislabs.com/upload">
+        Upload
+      </a>
     </li>
 
     
@@ -527,12 +642,12 @@ pre[class*="language-"] {
     <h2 class="visually-hidden">Top level navigation menu</h2>
     <ul class="nav">
         <li class="nav-item">
-          <a href="/portfolio-11ty/en-US/works/">
+          <a href="/portfolio-11ty/en-US/blog/">
             Work
           </a>
         </li>
         <li class="nav-item">
-          <a href="/portfolio-11ty/works/">
+          <a href="/portfolio-11ty/en-US/works/">
             Work
           </a>
         </li>
@@ -558,87 +673,47 @@ pre[class*="language-"] {
 </header>
 
 
-        <main id="skip" class="mt-8 lg:mt-20"> 
+        <main id="skip" class="mt-8 lg:mt-20">
+          
 
-<div class="flex flex-col lg:w-6/12 lg:m-auto pt-0 lg:pt-8" style="min-height: calc(100vh - 60px - 100px - 100px)">
+<div class="
+  flex flex-col
+  w-full lg:w-9/12 lg:m-auto
+  pt-0 lg:pt-8" style="min-height: calc(100vh - 60px - 100px - 100px)">
+
   <article class="grow">
-     
-<div class="toc bg-slate-100 rounded-xl p-4 mb-8 w-full lg:w-4/12" style="cursor: pointer">
-  <details>
-    <summary accesskey="c" title="(Alt + C)">
-      <span class="details text-lg font-bold">Table of Contents</span>
-    </summary>
+    <div class="
+      flex flex-col lg:flex-row
+      ">
 
-    <div class="inner pt-4"> <nav class="toc">
-                <ol>
-                    
-                    <li><a href="#intro">Intro #</a>
-            		</li>
+      
+        <div class="
+            w-full lg:w-9/12
+            break-all
+            prose max-w-none
+            prose-code:bg-slate-200
+            prose-code:rounded
+            prose-h3:font-bold
+            prose-h3:leading-none
+            prose-img:my-0
+            prose-img:rounded
+            prose-li:pl-0
+            prose-p:before:content-['']
+            prose-a:no-underline
+            prose-a:hover:underline
+            lg:pr-8
+            ">
+          <div class="pt-4">
+            <h1 class="m-0 text-2xl lg:text-4xl"> Installation | Update </h1>
 
-                    <li><a href="#guide">Guide #</a>
-            
-                <ol>
-                    
-                    <li><a href="#method-1">Method 1 #</a>
-            		</li>
-
-                    <li><a href="#method-2">Method 2 #</a>
-            		</li>
-
-                    <li><a href="#method-3">Method 3 #</a>
-            		</li>
-
-                    <li><a href="#method-4">Method 4 #</a>
-            		</li>
-
-                    <li><a href="#finally">Finally ... #</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#videos-featuring-papermod">Videos featuring Papermod #</a>
-            		</li>
-
-                    <li><a href="#quick-links">Quick Links #</a>
-            
-                <ol>
-                    
-                    <li><a href="#papermod-features">Papermod - Features #</a>
-            		</li>
-
-                    <li><a href="#papermod-faqs">Papermod - FAQs #</a>
-            		</li>
-
-                    <li><a href="#papermod-variables">Papermod - Variables #</a>
-            		</li>
-
-                    <li><a href="#papermod-icons">Papermod - Icons #</a>
-            		</li>
-
-                    <li><a href="#changelog">ChangeLog #</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#sample-config-yml">Sample config.yml #</a>
-            		</li>
-
-                    <li><a href="#sample-page-md">Sample Page.md #</a>
-            		</li>
-                </ol>
-            </nav> </div>
-  </details>
-</div>
-
-
-
-    <div class="m-auto prose max-w-none prose-code:bg-slate-200 prose-code:rounded prose-h3:font-bold prose-h3:leading-none prose-img:my-0 prose-img:rounded prose-li:pl-0 prose-p:before:content-[''] prose-a:no-underline prose-a:hover:underline">
-      <div class="pt-4"> <h1 class="m-0 text-2xl lg:text-4xl"> Installation | Update </h1>
- </div>
-      <div class="pt-4"> <div class="text-sm flex flex-wrap gap-1 mt-2">
+          </div>
+          <div class="pt-4">
+            <div class="text-sm flex flex-wrap gap-1 mt-2">
   <ul class="m-0 list-inside list-none flex flex-wrap not-prose pl-0 gap-1">
     <li>
-      <time datetime="2023-01-23"> 23 January 2023 </time>
+      <time datetime="2023-01-23">
+        23 January 2023
+      </time>
     </li>
     <li> · 3 min </li>
     <li> · Louis </li>
@@ -654,11 +729,27 @@ pre[class*="language-"] {
       <i class="text-xs fa-solid fa-link"></i>
     </a>
   </div>
-</div>
- </div>
 
-      <div class="pt-12 lg:pt-12 prose-ul:pl-4">
-         <h2 id="intro" tabindex="-1">Intro <a class="header-anchor" href="#intro">#</a></h2>
+  <div>|</div>
+
+  <div>
+    <ul class="m-0 list-inside list-none flex flex-wrap not-prose pl-0 gap-1">
+        <li>
+          <a href="/portfolio-11ty/tags/blog/" class="badge flex flex-row gap-1 items-center font-bold">
+            <i class="fa-solid fa-hashtag"></i>blog
+          </a>
+        </li>
+    </ul>
+    
+  </div>
+</div>
+
+          </div>
+
+          <div class="pt-12 lg:pt-12 prose-ul:pl-4">
+            
+              <div>
+                <h2 id="intro" tabindex="-1">Intro <a class="header-anchor" href="#intro">#</a></h2>
 <ul>
 <li><strong>We'll be using <code>yml/yaml</code> format for all examples down below, I recommend using <code>yml</code> over <code>toml</code> as it is easier to read.</strong></li>
 <li>You can find any <a href="https://www.google.com/search?q=yml+to+toml">YML to TOML</a> converters if necessary.</li>
@@ -766,7 +857,7 @@ nearly 40 percent more screen real estate than a 5K display.</p>
 <h1>業立臺四即文善公作有往，等怕準命小電個。</h1>
 <h2>査今聞光洋後化外財強主職。</h2>
 <h3>待進變果沒致友環健問水法代人苦天。</h3>
-<p><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt=""></p>
+<p><picture><source type="image/avif" srcset="/portfolio-11ty/img/94raYX8rRM-1670.avif 1670w"><source type="image/webp" srcset="/portfolio-11ty/img/94raYX8rRM-1670.webp 1670w"><img alt="photo of my cat" loading="lazy" decoding="async" src="/portfolio-11ty/img/94raYX8rRM-1670.png" width="1670" height="960"></picture></p>
 <p>待進變 <strong>果沒致友</strong> 環健問水法代人苦天。
 業立臺四即文 <em>善公作有</em> 往，等怕 <em><strong>準命</strong></em> 小電個。
 査今聞光洋 <a href="www.google.com">後化外財</a> 強主職。</p>
@@ -779,29 +870,208 @@ nearly 40 percent more screen real estate than a 5K display.</p>
 査今聞光洋後化外財強主職。</p>
 </blockquote>
 <hr>
- 
+
+              </div>
+            
+          </div>
+        </div>
+
+
+        <div class="
+          w-full lg:basis-3/12
+          order-first
+          md:order-last
+          mx-4
+          ">
+          
+
+
+  <div class="
+    toc
+    sticky
+    top-0
+    rounded-xl
+    p-4
+    " style="cursor: pointer">
+
+    
+    <details class="
+      block lg:hidden
+    ">
+      <summary accesskey="c" title="(Alt + C)">
+        <span class="details text-lg font-bold">Table of Contents</span>
+      </summary>
+
+      <div class="inner pt-4">
+        <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#intro">Intro #</a>
+            		</li>
+
+                    <li><a href="#guide">Guide #</a>
+            
+                <ol>
+                    
+                    <li><a href="#method-1">Method 1 #</a>
+            		</li>
+
+                    <li><a href="#method-2">Method 2 #</a>
+            		</li>
+
+                    <li><a href="#method-3">Method 3 #</a>
+            		</li>
+
+                    <li><a href="#method-4">Method 4 #</a>
+            		</li>
+
+                    <li><a href="#finally">Finally ... #</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#videos-featuring-papermod">Videos featuring Papermod #</a>
+            		</li>
+
+                    <li><a href="#quick-links">Quick Links #</a>
+            
+                <ol>
+                    
+                    <li><a href="#papermod-features">Papermod - Features #</a>
+            		</li>
+
+                    <li><a href="#papermod-faqs">Papermod - FAQs #</a>
+            		</li>
+
+                    <li><a href="#papermod-variables">Papermod - Variables #</a>
+            		</li>
+
+                    <li><a href="#papermod-icons">Papermod - Icons #</a>
+            		</li>
+
+                    <li><a href="#changelog">ChangeLog #</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#sample-config-yml">Sample config.yml #</a>
+            		</li>
+
+                    <li><a href="#sample-page-md">Sample Page.md #</a>
+            		</li>
+                </ol>
+            </nav>
       </div>
+    </details>
+
+    
+    <details class="
+      hidden lg:block
+    " open="">
+      <summary accesskey="c" title="(Alt + C)">
+        <span class="details text-lg font-bold">Table of Contents</span>
+      </summary>
+
+      <div class="inner pt-4">
+        <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#intro">Intro #</a>
+            		</li>
+
+                    <li><a href="#guide">Guide #</a>
+            
+                <ol>
+                    
+                    <li><a href="#method-1">Method 1 #</a>
+            		</li>
+
+                    <li><a href="#method-2">Method 2 #</a>
+            		</li>
+
+                    <li><a href="#method-3">Method 3 #</a>
+            		</li>
+
+                    <li><a href="#method-4">Method 4 #</a>
+            		</li>
+
+                    <li><a href="#finally">Finally ... #</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#videos-featuring-papermod">Videos featuring Papermod #</a>
+            		</li>
+
+                    <li><a href="#quick-links">Quick Links #</a>
+            
+                <ol>
+                    
+                    <li><a href="#papermod-features">Papermod - Features #</a>
+            		</li>
+
+                    <li><a href="#papermod-faqs">Papermod - FAQs #</a>
+            		</li>
+
+                    <li><a href="#papermod-variables">Papermod - Variables #</a>
+            		</li>
+
+                    <li><a href="#papermod-icons">Papermod - Icons #</a>
+            		</li>
+
+                    <li><a href="#changelog">ChangeLog #</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#sample-config-yml">Sample config.yml #</a>
+            		</li>
+
+                    <li><a href="#sample-page-md">Sample Page.md #</a>
+            		</li>
+                </ol>
+            </nav>
+      </div>
+    </details>
+
+  </div>
+
+
+        </div>
+
+      
     </div>
   </article>
 
+  <div class="my-8"></div>
+
   
-<div class="p-4 lg:px-8 mt-2 rounded-xl bg-slate-100 prose prose-p:mb-0 prose-h2:mb-2 max-w-none">
-  <ul class="not-prose pl-0 list-none list-outside flex gap-4 lg:gap-8 justify-between">
-    <li class="list-outside">
-      <a href="/portfolio-11ty/blog/chinese_test/" class="font-bold">
-        <div class="text-slate-500 flex gap-2 items-center justify-start">
-          <i class="fa-solid fa-angles-left fa-xs"></i>
-          <span class="text-sm uppercase">Previous</span>
-        </div>
-        <div class="pt-2 lg:pt-4">我在淘寶買了BambuLabX1-CarbonCombo</div>
-      </a>
-    </li>
-    
-  </ul>
+    <div class="
+      nav-buttons
+      p-4 lg:px-8 mt-2
+      rounded-xl
+      prose prose-p:mb-0 prose-h2:mb-2 max-w-none
+      ">
+      <ul class="not-prose pl-0 list-none list-outside flex gap-4 lg:gap-8 justify-between">
+        <li class="list-outside">
+          <a href="/portfolio-11ty/blog/chinese_test/" class="font-bold">
+            <div class="text-slate-500 flex gap-2 items-center justify-start">
+              <i class="nav-button-icon fa-solid fa-angles-left fa-xs"></i>
+              <span class="nav-button-text text-sm uppercase">Previous</span>
+            </div>
+            <div class="nav-text-title pt-2 lg:pt-4">我在淘寶買了BambuLabX1-CarbonCombo</div>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="my-8"></div>
 </div>
 
-</div>
- </main>
+        </main>
+
       </div>
 
       <footer>
@@ -818,9 +1088,16 @@ nearly 40 percent more screen real estate than a 5K display.</p>
         <div class="underline">2023 louis portfolio</div>
       </a>
 
-      <a href="//github.com/adityatelange/hugo-PaperMod" target="_blank">
-        building on top of Hugo papermod
-      </a>
+      <div>
+        building on top of <a href="//github.com/adityatelange/hugo-PaperMod" target="_blank">
+          Hugo papermod
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/louiscklaw/portfolio-11ty">
+          <i class="fa-brands fa-github"></i><span class="pl-1">source</span>
+        </a>
+      </div>
     </div>
   </div>
 </footer>

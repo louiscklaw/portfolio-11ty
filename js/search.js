@@ -2,43 +2,80 @@
   'use strict';
 
   const search = e => {
-    const results = window.searchIndex.search(e.target.value, {
-      bool: 'OR',
-      expand: true,
-    });
+    console.log(e.target.value.length == 0)
 
     const resEl = document.getElementById('searchResults');
+    const resTitleEl = document.getElementById('result-title');
     const noResultsEl = document.getElementById('noResultsFound');
+    const typeSomethingToSearchEl = document.getElementById('typeSomethingToSearch');
 
-    resEl.innerHTML = '';
-    if (results) {
+    if (e.target.value.length == 0){
+
+      resEl.style.display = 'none';
+      resTitleEl.style.display='none';
       noResultsEl.style.display = 'none';
-      results.map(r => {
-        const { id, title, description } = r.doc;
-        const el = document.createElement('li');
-        resEl.appendChild(el);
+      typeSomethingToSearchEl.style.display="block"
+    }else{
+      typeSomethingToSearchEl.style.display="none"
 
-        const h3 = document.createElement('h3');
-        el.appendChild(h3);
-
-        const a = document.createElement('a');
-        a.setAttribute('href', id);
-        a.textContent = title;
-        h3.appendChild(a);
-
-        const p = document.createElement('p');
-        p.textContent = description;
-        el.appendChild(p);
+      const results = window.searchIndex.search(e.target.value, {
+        bool: 'OR',
+        expand: true,
       });
-    } else {
-      noResultsEl.style.display = 'block';
+
+      resEl.innerHTML = '';
+
+      if (results) {
+        // show result
+        resEl.style.display = 'block';
+        noResultsEl.style.display = 'none';
+        resTitleEl.style.display='block'
+
+        results.map(r => {
+          const { id, title, description } = r.doc;
+          const liEl = document.createElement('li');
+          liEl.classList.add('basis-1/3')
+          liEl.classList.add('px-2')
+          resEl.appendChild(liEl);
+
+          const div = document.createElement('div');
+          div.innerHTML=
+`
+<a href="${id}">
+  <div class="
+    worklist-card
+    p-2 lg:p-4
+    border border-slate-150 rounded-xl
+    prose prose-p:mb-0 prose-h2:text-base
+    ">
+    <h2>${title}</h2>
+    <code>${id}</code>
+
+    <p class="mt-4">
+      ${'Read Install and Update instructions here'}
+    </p>
+    <div>
+    </div>
+  </div>
+</a>
+`
+          liEl.appendChild(div);
+        });
+      } else {
+        // hide result
+        noResultsEl.style.display = 'block';
+        resTitleEl.style.display='none'
+      }
     }
+
+
   };
 
   fetch('/search-index.json').then(response =>
     response.json().then(rawIndex => {
       window.searchIndex = elasticlunr.Index.load(rawIndex);
-      document.getElementById('searchField').addEventListener('input', search);
+      document.getElementById('searchField')
+        .addEventListener('input', search);
     }),
   );
 })(window, document);
