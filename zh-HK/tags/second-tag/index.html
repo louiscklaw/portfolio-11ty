@@ -13,13 +13,15 @@
 
     
 
+
 <script src="https://browser.sentry-cdn.com/7.43.0/bundle.tracing.min.js" integrity="sha384-XrtsNPpOZ+ul39uZL5FBdv8ByR9EAoDxyx2pnT9+txkfvq1oqUSD6jWO+Qjj67LD" crossorigin="anonymous"></script>
+
 
 <script>
   Sentry.init({
     dsn: "https://87f86bb1f70549aca9a36d7f63965ff7@o1234273.ingest.sentry.io/4504852838875136",
-    integrations: [new Sentry.BrowserTracing()],
 
+    integrations: [new Sentry.BrowserTracing()],
 
     // Set tracesSampleRate to 1.0 to capture 100%
     // of transactions for performance monitoring.
@@ -27,7 +29,7 @@
     tracesSampleRate: 1.0,
   });
 
-  myUndefinedFunction();
+  
 
 </script>
 
@@ -417,7 +419,7 @@ pre[class*="language-"] {
       </a>
     </li>
 
-    <li class="text-base font-bold">
+    <li id="upload-link" class="hidden text-base font-bold">
       <a href="//share.louislabs.com/upload">
         Upload
       </a>
@@ -426,6 +428,26 @@ pre[class*="language-"] {
     
   </ul>
 </nav>
+
+<script>
+  window.addEventListener("DOMContentLoaded",()=>{
+    fetch('//louislabs.com/upload')
+      .then(res => {
+        document.querySelector('#upload-link').classList.remove('hidden');
+        document.querySelector('#upload-link').classList.add('block');
+      })
+      .catch(err => {
+        console.log({err})
+        document.querySelector('#upload-link').classList.add('hidden');
+
+        if (window.location.host != '192.168.10.180:8080') {
+          throw new Error('cannot access to upload page');
+        }
+
+      })
+
+  })
+</script>
 
     </div>
   </div>
@@ -576,10 +598,18 @@ pre[class*="language-"] {
           Hugo papermod
         </a>
       </div>
-      <div>
-        <a href="https://github.com/louiscklaw/portfolio-11ty">
-          <i class="fa-brands fa-github"></i><span class="pl-1">source</span>
-        </a>
+      <div class="flex gap-4">
+        <div>
+          <a href="//github.com/louiscklaw/portfolio-11ty">
+            <i class="fa-brands fa-github"></i><span class="pl-1">source</span>
+          </a>
+        </div>
+        <div>
+          <a href="//portfolio-sg.sentry.io/issues" class="flex gap-0" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-sentry" width="1rem" height="1rem" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 18a1.93 1.93 0 0 0 .306 1.076a2 2 0 0 0 1.584 .924c.646 .033 -.537 0 .11 0h3a4.992 4.992 0 0 0 -3.66 -4.81c.558 -.973 1.24 -2.149 2.04 -3.531a8.997 8.997 0 0 1 5.62 8.341h4c.663 0 2.337 .005 3 0a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-1.84 3.176c4.482 2.05 7.6 6.571 7.6 11.824"></path> </svg>
+            <span class="pl-1">issues</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
