@@ -12,3 +12,7 @@ $ npm run start
 
 $ scripts/start_prod.sh
 ```
+
+### issues / sentry:
+
+https://portfolio-sg.sentry.io/issues

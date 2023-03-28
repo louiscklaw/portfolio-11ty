@@ -41,7 +41,7 @@
       </a>
     </li>
 
-    <li class="text-base font-bold">
+    <li id="upload-link" class="hidden text-base font-bold">
       <a href="{{ "//share.louislabs.com/upload" }}">
         {{ 'Upload' | i18n }}
       </a>
@@ -59,3 +59,23 @@
     #}
   </ul>
 </nav>
+
+<script>
+  window.addEventListener("DOMContentLoaded",()=>{
+    fetch('//louislabs.com/upload')
+      .then(res => {
+        document.querySelector('#upload-link').classList.remove('hidden');
+        document.querySelector('#upload-link').classList.add('block');
+      })
+      .catch(err => {
+        console.log({err})
+        document.querySelector('#upload-link').classList.add('hidden');
+
+        if (window.location.host != '192.168.10.180:8080') {
+          throw new Error('cannot access to upload page');
+        }
+
+      })
+
+  })
+</script>
