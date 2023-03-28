@@ -447,7 +447,7 @@ pre[class*="language-"] {
         document.querySelector('#upload-link').classList.add('hidden');
 
         if (window.location.host != '192.168.10.180:8080') {
-          throw new Error('cannot access to upload page');
+          throw new Error(`${window.location.host} cannot access to upload page`);
         }
 
       })
