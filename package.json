@@ -1,11 +1,11 @@
 {
-  "name": "eleventy-base-blog-helloworld",
+  "name": "portfolio-11ty",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gitUpdate": "git add . && git commit -m \"update eleventy-base-blog-helloworld,\" && git push",
+    "gitUpdate": "git add . && git commit -m \"update portfolio-11ty,\" && git push",
     "into_docker": "docker compose -f ./docker/docker-compose.dev.yml exec -it test bash",
     "format": "prettier --write **/*.{js,json,yml,scss}"
   },

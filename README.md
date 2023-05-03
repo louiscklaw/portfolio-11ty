@@ -1,5 +1,7 @@
-test/eleventy-base-blog-papermod-helloworld/helloworld
+# test/eleventy-base-blog-papermod-helloworld/helloworld
 
+
+## develop / update content
 ```bash
 # to start dev docker
 
@@ -13,6 +15,13 @@ $ npm run start
 $ scripts/start_prod.sh
 ```
 
-### issues / sentry:
+## publish
+
+```bash
+# at project root directory
+./scripts/publish.sh
+```
+
+## issues tracking / sentry:
 
 https://portfolio-sg.sentry.io/issues
