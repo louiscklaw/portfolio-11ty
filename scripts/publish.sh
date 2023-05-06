@@ -2,6 +2,6 @@
 
 pushd app
   npm i -D
-  npm run build-ghpages
+  # npm run build-ghpages
   npm run publish-ghpages
 popd

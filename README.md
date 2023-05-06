@@ -2,6 +2,11 @@
 
 
 ## develop / update content
+# README.md
+
+## status
+![](https://github.com/louiscklaw/portfolio-11ty/actions/workflows/pages/pages-build-deployment/badge.svg)
+
 
 ```bash
 
@@ -40,3 +45,5 @@ $ scripts/start_prod.sh
 ## Related project
   - meet
     - https://meet.louislabs.com/
+
+
