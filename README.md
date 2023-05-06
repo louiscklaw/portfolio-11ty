@@ -5,7 +5,7 @@
 # README.md
 
 ## status
-![](https://github.com/louiscklaw/portfolio-11ty/actions/workflows/pages/pages-build-deployment/badge.svg)
+![https://github.com/louiscklaw/portfolio-11ty/actions/workflows/pages/pages-build-deployment](https://github.com/louiscklaw/portfolio-11ty/actions/workflows/pages/pages-build-deployment/badge.svg)
 
 
 ```bash
