@@ -7,11 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "gitUpdate": "git add . && git commit -m \"update portfolio-11ty,\" && git push",
     "into_docker": "docker compose -f ./docker/docker-compose.dev.yml exec -it test bash",
-    "format": "prettier --write **/*.{js,json,yml,scss}"
+    "format": "prettier --write **/*.{js,json,yml,scss}",
+    "watch-bs": "browser-sync start --config bs-config.js --proxy \"localhost:8080\"  --files \"**/*.*\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.29.3"
   }
 }

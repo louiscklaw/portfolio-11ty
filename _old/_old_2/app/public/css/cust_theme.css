@@ -7,4 +7,44 @@
   background-color: rgb(44, 62, 80);
 }
 
+.work .social-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.work .greetings-body {
+  margin-top: 1rem;
+}
+.work .greetings-footer {
+  margin-top: 1rem;
+}
+@media screen and (max-width: 640px) {
+  .work .greetings-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .work .greetings-body {
+    min-height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .work .greetings-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1536px) {
+  .work .greetings-body {
+    min-height: 10rem;
+  }
+}
+
 /*# sourceMappingURL=cust_theme.css.map */

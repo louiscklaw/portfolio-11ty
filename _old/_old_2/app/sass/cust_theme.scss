@@ -1,12 +1,73 @@
-[data-theme="dracula"] body {
-
+[data-theme='dracula'] body {
 }
 
 .tag-card {
   background-color: rgba(44, 62, 80, 0.1);
 }
 
-[data-theme="dracula"] .tag-card {
+[data-theme='dracula'] .tag-card {
   border: solid 1px rgba(236, 240, 241, 0.2);
-  background-color: rgba(44, 62, 80,1.0);
+  background-color: rgba(44, 62, 80, 1);
+}
+
+.work {
+  .social-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .greetings-header {  }
+
+  .greetings-body {
+    margin-top: 1rem;
+  }
+  .greetings-footer {
+    margin-top: 1rem;
+  }
+
+  // 'sm': '640px',
+  @media screen and (max-width: 640px) {
+    .greetings-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .greetings-body {
+      min-height: 5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .greetings-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  // 'md': '768px',
+  @media screen and (min-width: 768px) {
+    // background-color: pink;
+  }
+
+  // 'lg': '1024px',
+  @media screen and (min-width: 1024px) {
+    // background-color: cyan;
+  }
+
+  // 'xl': '1280px',
+  @media screen and (min-width: 1280px) {
+  }
+
+  // '2xl': '1536px',
+  @media screen and (min-width: 1536px) {
+    .greetings-body {
+      min-height: 10rem;
+    }
+  }
 }

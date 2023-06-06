@@ -2,7 +2,7 @@
 layout: layouts/work_post.njk
 tags:
   - works
-title: opencv car counting
+title: print pcb
 description: easy finder for finding the data exposed by gov.hk
 date: 2022-01-01
 show_toc: true
@@ -13,18 +13,18 @@ show_toc: true
 
 ## opencv car counting
 
-### Purpose:
+### Purpose :
 
 To count the number of cars passing by images only.
 This project is craeted on top of the another github works work.
 
-### Technology / Stack:
+### Technology / Stack :
 
 - python
 - docker
 - linux
 
-### References / Repositories:
+### References / Repositories :
 
 <a href="//github.com/louiscklaw/car_tracking_tryout" class="flex flex-row gap-1 items-center" target="_blank">
   <span class="underline">github.com/louiscklaw/car_tracking_tryout</span>

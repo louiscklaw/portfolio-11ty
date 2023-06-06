@@ -1,6 +1,5 @@
 const path = require('path');
 
-
 // newWindowLink start
 async function newWindowLink(text, href) {
   return `
@@ -25,15 +24,15 @@ async function githubLink(text, href) {
 // githubLink end
 
 module.exports = eleventyConfig => {
-  console.log(`init eleventy.config.my_shortcut.js`)
+  console.log(`init eleventy.config.my_shortcut.js`);
 
-  eleventyConfig.addAsyncShortcode("githubLink", githubLink);
-  eleventyConfig.addAsyncShortcode("newWindowLink", newWindowLink);
+  eleventyConfig.addAsyncShortcode('githubLink', githubLink);
+  eleventyConfig.addAsyncShortcode('newWindowLink', newWindowLink);
 
-  eleventyConfig.addShortcode("helloworldShortcode",
-    function(firstName, lastName) {
-      return `helloworld ${firstName} ${lastName}`
-    }
+  eleventyConfig.addShortcode(
+    'helloworldShortcode',
+    function (firstName, lastName) {
+      return `helloworld ${firstName} ${lastName}`;
+    },
   );
-
 };

@@ -21,7 +21,6 @@ const searchFilter = require('./filters/searchFilter');
 
 const readingTime = require('eleventy-plugin-reading-time');
 
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     showAllHosts: true,
@@ -53,7 +52,9 @@ module.exports = function (eleventyConfig) {
 
   // Official plugins
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight, { preAttributes: { tabindex: 0 }, });
+  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+    preAttributes: { tabindex: 0 },
+  });
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(pluginBundle);
@@ -61,7 +62,9 @@ module.exports = function (eleventyConfig) {
   // Filters
   eleventyConfig.addFilter('readableDate', (dateObj, format, zone) => {
     // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-    return DateTime.fromJSDate(dateObj, { zone: zone || 'utc' }).toFormat(format || 'dd LLLL yyyy');
+    return DateTime.fromJSDate(dateObj, { zone: zone || 'utc' }).toFormat(
+      format || 'dd LLLL yyyy',
+    );
   });
 
   eleventyConfig.addFilter('htmlDateString', dateObj => {
@@ -96,7 +99,9 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('filterTagList', function filterTagList(tags) {
-    return (tags || []).filter(tag => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1);
+    return (tags || []).filter(
+      tag => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1,
+    );
   });
 
   // Customize Markdown library settings:
@@ -131,9 +136,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('search', searchFilter);
   eleventyConfig.addCollection('movies', collection => {
-    return [
-      ...collection.getFilteredByGlob('./content/movies/**/*.md')
-    ];
+    return [...collection.getFilteredByGlob('./content/movies/**/*.md')];
   });
 
   // Features to make your build faster (when you need them)

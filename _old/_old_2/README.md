@@ -18,6 +18,10 @@ $ npm run into_docker
 # inside docker
 $ npm run start
 
+# start browser-sync watch
+# on the host
+$ npm run watch-bs
+
 # browse localhost:8080
 
 # to start prod docker

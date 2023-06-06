@@ -2,12 +2,24 @@
 layout: layouts/base.njk
 ---
 
-helloworld ?
+<div>helloworld ? 12321</div>
 
 <div>
-  /en-US/tags/{{ tag | slugify }}
+  /en-US/tags/{{ 'tag' | slugify }}
 </div>
 
+1
+
+<pre>
+"/tags/" | locale_url
+<pre>
 <div>{{ "/tags/" | locale_url }}</div>
-<div>{{ "/en-US/tags/{{ tag | slugify }}/" | locale_url }}</div>
-<div>{{ "/tags/" | locale_url }}{{ tag | slugify }}</div>
+
+2
+<div>
+  {{ "/en-US/tags/{{ tag | slugify }}/" | locale_url }}
+</div>
+
+4
+<div>
+  {{ "/tags/" | locale_url }}{{ 'tag' | slugify }}</div>

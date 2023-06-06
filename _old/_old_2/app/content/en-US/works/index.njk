@@ -8,33 +8,30 @@ numberOfLatestPostsToShow: 8
 
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<div class="work mx-auto w-full lg:w-9/12 flex flex-col lg:flex-row gap-0 lg:gap-4">
+  <div class="greetings w-full lg:w-4/12">
+    <h1 class="greetings-header">Hi, this is louis</h1>
+    <div class="greetings-body" style="">
+      <p>
+        Listing some of my works
+      </p>
+    </div>
 
-<div class="mx-auto w-full lg:w-9/12 flex flex-col lg:flex-row gap-0 lg:gap-4">
-  <div class="w-full lg:w-4/12">
-    <h1>Hi, this is louis</h1>
-    <p>
-      Welcome to demo of hugo’s theme PaperMod.<br />
-      PaperMod is a simple but fast and responsive theme with useful feature-set that enhances UX.<br />
-      Do give a 🌟 on Github !<br />
-      PaperMod is based on theme Paper.<br />
-    </p>
-
-    <div class="
-      text-3xl flex flex-row flex-wrap gap-4
-      pt-4 lg:pt-0
-      ">
-      <a href="//github.com/louiscklaw" target="_blank">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="//www.linkedin.com/in/louiscklaw" target="_blank">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
-      <a href="//t.me/louislabs" target="_blank">
-        <i class="fa-brands fa-telegram"></i>
-      </a>
-      <a href="//louislabs.slack.com/" target="_blank">
-        <i class="fa-brands fa-slack"></i>
-      </a>
+    <div class="greetings-footer">
+      <div class="text-3xl flex flex-row flex-wrap gap-4 pt-4 lg:pt-0 ">
+        <a href="//github.com/louiscklaw" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="//www.linkedin.com/in/louiscklaw" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="//t.me/louislabs" target="_blank">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="//louislabs.slack.com/" target="_blank">
+          <i class="fa-brands fa-slack"></i>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -44,8 +41,8 @@ numberOfLatestPostsToShow: 8
     {% include "worklist.njk" %}
   </div>
 </div>
-
-{# List every content page in the project #} {#
+{# List every content page in the project #}
+{#
 <ul>
   {%- for entry in collections.all %}
   <li
